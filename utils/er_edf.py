@@ -89,7 +89,6 @@ def er_edf_stack_resource(tasks, resources):
                 pass
 
         # Check if the task has completed its execution
-        print(current_task.exec_time, current_task.final_exec_time)
         if current_task.exec_time >= current_task.final_exec_time:
             logger.info('Task %s completed its execution', current_task.name)
             active_tasks.remove((current_task.deadline, current_task))
