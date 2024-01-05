@@ -23,7 +23,7 @@ def uunifast(n, u, criticality_levels, period):
         else:
             short_exec_time = execution_time
             long_exec_time = execution_time
-        critical_section_units = random.randint(1, 3)
+        critical_section_units = random.randint(6, 10)
         task_set.append(
             Task(i, deadline, short_exec_time, long_exec_time, None, criticality, critical_section_units)
         )
