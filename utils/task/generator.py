@@ -1,4 +1,5 @@
 import random
+from copy import deepcopy
 
 from .criticality_levels import CRITICALITY_LEVELS
 from .task import HC, LC, TaskResource, CriticalSection
@@ -112,10 +113,14 @@ class TaskGenerator:
         resources = self.generate_all_resources()
         tasks = []
         hc_periods = [
-            5, 10, 15
+            5,
+            10,
+            15,
         ]
         lc_periods = [
-            5, 10, 15
+            5,
+            10,
+            15,
         ]
         all_periods = hc_periods + lc_periods
         utilizations = uunifast(len(all_periods), self._total_utilization)
@@ -143,7 +148,7 @@ class TaskGenerator:
                         index=index,
                         utilization=utilizations[i],
                         period=period,
-                        critical_sections=hc_critical_sections[i],
+                        critical_sections=deepcopy(hc_critical_sections[i]),
                     )
                 )
             for i, period in enumerate(lc_periods):
@@ -152,7 +157,7 @@ class TaskGenerator:
                         index=index,
                         utilization=utilizations[len(hc_periods) + i],
                         period=period,
-                        critical_sections=lc_critical_sections[i],
+                        critical_sections=deepcopy(lc_critical_sections[i]),
                     )
                 )
 

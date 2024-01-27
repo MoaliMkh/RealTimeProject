@@ -1,86 +1,98 @@
 import heapq
 
-from .logger import logger
+from utils.logger import logger
+from utils.task import HC, BaseTask
 
 
-def resource_that_task_can_acquire(task, resources):
-    for resource in resources:
-        if resource.total_units - resource.allocated_units >= task.critical_section_units:
-            return resource
-    return None
+class ErEDF:
+    def __init__(self, tasks, resources):
+        self._tasks = tasks
+        self._resources = resources
+        self._is_overrun = False
+        # we can change this
+        self._overrun_time = 10
 
+    def _schedule(self):
+        current_time = 0
+        task_queue = []
+        for task in self._tasks:
+            heapq.heappush(task_queue, task)
 
-def er_edf_stack_resource(tasks, resources):
-    # Create a heap of tasks sorted by their deadlines
-    active_tasks = []
-    for task in tasks:
-        heapq.heappush(active_tasks, (task.deadline, task))
-    time = 0
+        while task_queue:
+            if all([_.should_schedule_later for _ in task_queue]):
+                # impossible
+                logger.info('Schedule is not feasible. deadlock detected!!!')
+                break
 
-    while active_tasks:
-        current_task = heapq.heappop(active_tasks)[1]
-        logger.info('Processing task %s with deadline %s', current_task.name, current_task.deadline)
+            task = heapq.heappop(task_queue)
 
-        if current_task.resource not in resources:
-            for task in tasks:
-                if task.resource == current_task.resource and not task.is_scheduled:
-                    if task.resource is not None:
-                        resources.append(task.resource)
-                        task.resource.release_units()
-                        logger.info('Resource %s released by task %s', task.resource.name, task.name)
-                        task.resource = None
+            current_time, task = self._get_current_running_task(current_time, task)
+            task.should_schedule_later = False
 
+            if current_time >= self._overrun_time:
+                self._is_overrun = True
+
+            # Check if the task has reached its short execution time and if it's a high criticality task,
+            # switch to long execution time
+            if self._is_overrun and isinstance(task, HC) and task.executed_time >= task.short_exec_time:
+                task.exec_time = task.long_exec_time
+
+            # Check if the task has reached its deadline
+            if current_time >= task.deadline:
+                if isinstance(task, HC):
+                    logger.info(f'Task {task} has missed its deadline')
+                    logger.info('Schedule is not feasible!')
                     break
-        else:
-            resources.remove(current_task.resource)
-            current_task.resource.allocate_units(current_task.critical_section_units)
-            logger.info('Resource %s acquired by task %s', current_task.resource, current_task.name)
+                else:
+                    continue
 
-        current_task.is_scheduled = True
+            current_critical_sections = [
+                cs for cs in task.critical_sections if
+                cs.relative_start_time <= task.executed_time < cs.relative_end_time
+            ]
 
-        current_task.exec_time += 1
-        logger.info('Task %s execution time is %s', current_task.name, current_task.exec_time)
-
-        if current_task.criticality == 'HC' and current_task.exec_time > current_task.short_exec_time:
-            current_task.final_exec_time = current_task.long_exec_time
-            logger.info('Task %s switched to long execution time', current_task.name)
-
-        if current_task.exec_time >= current_task.deadline:
-            logger.info('Task %s reached its deadline', current_task.name)
-            if not current_task.is_scheduled:
-                current_task.is_scheduled = True
-
-                logger.info('Checking if any tasks with late deadlines can be scheduled')
-                while active_tasks:
-                    next_task = heapq.heappop(active_tasks)[1]
-
-                    if next_task.deadline > time:
-                        heapq.heappush(active_tasks, (next_task.deadline, next_task))
-                        break
-
-        else:
-            active_tasks.append((current_task.deadline, current_task))
-            l_resource = resource_that_task_can_acquire(current_task, resources)
-            if current_task.resource is None and l_resource is not None:
-                resources.remove(l_resource)
-                current_task.resource = l_resource
-                current_task.resource.allocate_units(current_task.critical_section_units)
-                logger.info('Resource %s acquired by task %s', current_task.resource.name, current_task.name)
-
+            # Check if the task has access to all resources it needs
+            if all(
+                    cs.task_resource.original_resource.free_units_count >= cs.task_resource.units
+                    for cs in current_critical_sections
+            ):
+                # Utilize resources
+                for cs in current_critical_sections:
+                    cs.task_resource.acquire_resources()
             else:
-                logger.info('Task %s does not need any resources', current_task.name)
-                pass
+                # Release task to retry later
+                # we set this true to prevent infinite loop
+                task.should_schedule_later = True
+                heapq.heappush(task_queue, task)
+                continue
 
-        if current_task.exec_time >= current_task.final_exec_time:
-            logger.info('Task %s completed its execution', current_task.name)
-            active_tasks.remove((current_task.deadline, current_task))
-            if current_task.resource:
-                logger.info('Task %s released all resources', current_task.name)
-                resources.append(current_task.resource)
-                current_task.resource.release_units()
-                current_task.resource = None
+            # Mark the task as running and update the task's execution time
+            duration = min([1, task.exec_time])
+            task.executed_time += duration
+            current_time += duration
 
-        time += 1
+            ended_critical_sections = [
+                cs for cs in task.critical_sections if
+                cs.relative_end_time <= task.executed_time
+            ]
+            for cs in ended_critical_sections:
+                cs.task_resource.release_resources()
 
-    logger.info('Finished er_edf_stack_resource function')
-    return tasks
+            # Check if the task has completed its execution
+            if task.executed_time >= task.exec_time:
+                task.finish(current_time)
+                # Release all resources held by the task
+                for cs in task.critical_sections:
+                    cs.task_resource.release_resources()
+            else:
+                # we add it back to queue to continue execution
+                heapq.heappush(task_queue, task)
+
+    @staticmethod
+    def _get_current_running_task(current_time, r_task: BaseTask):
+        if r_task.release_time > current_time:
+            current_time = r_task.release_time
+        return current_time, r_task
+
+    def schedule(self):
+        self._schedule()
