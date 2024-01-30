@@ -165,8 +165,6 @@ class TaskGenerator:
                     )
                 )
 
-        print(len(tasks))
-
         return dict(
             tasks=tasks,
             resources=resources

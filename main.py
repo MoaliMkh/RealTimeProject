@@ -1,12 +1,21 @@
-from utils.er_edf import ErEDF
-from utils.task import TaskGenerator, BaseTask
+import os
 import json
+
+from utils.er_edf import ErEDF
+from utils.task import TaskGenerator
+
+DATA_DIR = 'data'
+
+os.mkdir(DATA_DIR)
 
 
 class Runner:
 
+    def __init__(self, iterations=100):
+        self._iterations = iterations
+
     @staticmethod
-    def serializer_tasks(tasks, f_name):
+    def serializer_tasks(tasks, f_name, index):
         all_tasks = []
         for task in tasks:
             all_tasks.append({
@@ -35,17 +44,15 @@ class Runner:
                 ]
             })
 
-        with open(f'{f_name}.json', 'w') as f_out:
+        with open(f'{DATA_DIR}/{f_name}.{index}.json', 'w') as f_out:
             json.dump(all_tasks, f_out, indent=4)
 
-    @classmethod
-    def run(cls):
-
+    def _run_single_simulation(self, index):
         data = TaskGenerator().generate_task_and_resource_set()
         tasks = data['tasks']  # type:  list['BaseTask']
         resources = data['resources']
 
-        cls.serializer_tasks(tasks, 'all_tasks_before_run')
+        self.serializer_tasks(tasks, 'all_tasks_before_run', index)
 
         all_serialized_resources = []
         for resource in resources:
@@ -55,25 +62,16 @@ class Runner:
                 "allocated_units": resource.allocated_units
             })
 
-        with open('all_resources.json', 'w') as f_out:
+        with open(f'{DATA_DIR}/all_resources-{index}.json', 'w') as f_out:
             json.dump(all_serialized_resources, f_out, indent=4)
 
         ErEDF(tasks, resources).schedule()
 
-        cls.serializer_tasks(tasks, 'all_tasks_after_run')
+        self.serializer_tasks(tasks, 'all_tasks_after_run', index)
 
-        print(tasks)
-        all_LC_tasks = 0
-        counter = 0
-        for task in tasks:
-            # if task.criticality == "LC":
-            #     all_LC_tasks += 1
-            if task.finish_time is not None:
-                counter += 1
-
-        # print(all_LC_tasks)
-        print(len(tasks))
-        print(counter)
+    def run(self):
+        for index in range(self._iterations):
+            self._run_single_simulation(index)
 
 
-Runner.run()
+Runner().run()
