@@ -1,6 +1,5 @@
 import os
 import json
-
 from utils.er_edf import ErEDF
 from utils.task import TaskGenerator
 
@@ -37,7 +36,6 @@ class Runner:
                             "original_resource": {
                                 "name": cs.task_resource.original_resource.name,
                                 "total_units": cs.task_resource.original_resource.total_units,
-                                "free_units_count": cs.task_resource.original_resource.free_units_count
                             },
                             "units": cs.task_resource.units
                         }
@@ -45,7 +43,7 @@ class Runner:
                 ]
             })
 
-        with open(f'{DATA_DIR}/{f_name}.{index}.json', 'w') as f_out:
+        with open(f'{DATA_DIR}/{f_name}.{index}.json', 'w+') as f_out:
             json.dump(all_tasks, f_out, indent=4)
 
     def _run_single_simulation(self, index):
@@ -63,7 +61,7 @@ class Runner:
                 "allocated_units": resource.allocated_units
             })
 
-        with open(f'{DATA_DIR}/all_resources-{index}.json', 'w') as f_out:
+        with open(f'{DATA_DIR}/all_resources-{index}.json', 'w+') as f_out:
             json.dump(all_serialized_resources, f_out, indent=4)
 
         ErEDF(tasks, resources).schedule()
@@ -75,4 +73,4 @@ class Runner:
             self._run_single_simulation(index)
 
 
-Runner().run()
+Runner(iterations=100).run()

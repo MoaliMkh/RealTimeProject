@@ -38,7 +38,8 @@ class ErEDF:
                     if isinstance(task, HC) and task.finish_time is None:
                         task.exec_time = task.long_exec_time
                         task.period = task.period * self.x
-                        if task.executed_time != 0:
+                        # deadline will automatically change
+                        if task.release_time > current_time:
                             task.release_time = task.release_time * self.x
 
             # Check if the task has reached its deadline

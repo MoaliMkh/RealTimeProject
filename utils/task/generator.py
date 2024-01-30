@@ -11,16 +11,14 @@ class TaskGenerator:
 
     def __init__(
             self,
-            system_end_time=100,
             total_resource_count=15,
             resource_min_unit_count=1,
             resource_max_unit_count=5,
             total_task_count=100,
             critical_sections_min_count=6,
             critical_sections_max_count=10,
-            total_utilization=0.75,
+            total_utilization=0.5,
     ):
-        self._system_end_time = system_end_time
         self._total_resource_count = total_resource_count
         self.resource_min_unit_count = resource_min_unit_count
         self.resource_max_unit_count = resource_max_unit_count

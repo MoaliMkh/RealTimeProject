@@ -1,7 +1,700 @@
-2024-01-30 16:17:33,121:INFO: Task index: 8-2
+2024-01-30 19:33:26,658:INFO: Task index: 5-1
 criticality: HC
-period: 15
-exec_time: 0.5607834628513912
+period: 15.0
+exec_time: 0.2201146141205479
+release_time: 50
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,658:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,688:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.8869524395015876
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,688:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,715:INFO: Task index: 7-2
+criticality: HC
+period: 22.5
+exec_time: 1.6983196626553463
+release_time: 105
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,715:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,741:INFO: Task index: 6-1
+criticality: HC
+period: 15.0
+exec_time: 1.4220469168284229
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,741:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,767:INFO: Task index: 5-1
+criticality: HC
+period: 15.0
+exec_time: 1.2361806569914269
+release_time: 50
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,767:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,793:INFO: Task index: 6-1
+criticality: HC
+period: 15.0
+exec_time: 0.07346728607245667
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,793:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,819:INFO: Task index: 9-0
+criticality: HC
+period: 7.5
+exec_time: 0.4248387419487912
+release_time: 45
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,819:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,844:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 1.113936853152055
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,844:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,872:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 1.5897195584641164
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,872:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,901:INFO: Task index: 14-1
+criticality: HC
+period: 15.0
+exec_time: 0.42870732830735614
+release_time: 140
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,901:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,928:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 0.9604517340276266
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,928:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,954:INFO: Task index: 7-1
+criticality: HC
+period: 15.0
+exec_time: 0.3238719443332505
+release_time: 70
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,954:INFO: Schedule is not feasible!
+2024-01-30 19:33:26,982:INFO: Task index: 3-2
+criticality: HC
+period: 22.5
+exec_time: 0.5595701298984659
+release_time: 45
+finish_time: None has missed its deadline
+2024-01-30 19:33:26,982:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,010:INFO: Task index: 2-1
+criticality: HC
+period: 15.0
+exec_time: 1.1223471231941522
+release_time: 20
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,010:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,039:INFO: Task index: 12-1
+criticality: HC
+period: 15.0
+exec_time: 0.3732407897754608
 release_time: 120
 finish_time: None has missed its deadline
-2024-01-30 16:17:33,121:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,039:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,064:INFO: Task index: 8-1
+criticality: HC
+period: 15.0
+exec_time: 3.1757680982852463
+release_time: 80
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,064:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,088:INFO: Task index: 10-1
+criticality: HC
+period: 15.0
+exec_time: 0.1322411585357619
+release_time: 100
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,088:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,116:INFO: Task index: 6-2
+criticality: HC
+period: 22.5
+exec_time: 2.1772655344661036
+release_time: 90
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,117:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,144:INFO: Task index: 2-1
+criticality: HC
+period: 15.0
+exec_time: 2.7355693115437574
+release_time: 20
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,144:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,173:INFO: Task index: 5-1
+criticality: HC
+period: 15.0
+exec_time: 0.25193319476136955
+release_time: 50
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,173:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,198:INFO: Task index: 10-1
+criticality: HC
+period: 15.0
+exec_time: 0.5419121128263349
+release_time: 100
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,198:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,225:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 1.1406857560140915
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,225:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,253:INFO: Task index: 12-1
+criticality: HC
+period: 15.0
+exec_time: 0.8702344584828775
+release_time: 120
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,253:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,281:INFO: Task index: 2-1
+criticality: HC
+period: 15.0
+exec_time: 1.1093137671802569
+release_time: 20
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,281:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,309:INFO: Task index: 11-0
+criticality: HC
+period: 7.5
+exec_time: 0.1745967277907659
+release_time: 55
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,309:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,336:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 0.9879548818794137
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,336:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,364:INFO: Task index: 3-1
+criticality: HC
+period: 15.0
+exec_time: 0.11187836786269334
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,364:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,392:INFO: Task index: 13-1
+criticality: HC
+period: 15.0
+exec_time: 0.9277155210209009
+release_time: 130
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,392:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,420:INFO: Task index: 7-2
+criticality: HC
+period: 22.5
+exec_time: 0.08192026799720004
+release_time: 105
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,420:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,447:INFO: Task index: 14-1
+criticality: HC
+period: 15.0
+exec_time: 1.0615696843954647
+release_time: 140
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,447:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,472:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 1.7220813664407058
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,472:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,498:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.4547990613818649
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,498:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,523:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 2.148532625942324
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,523:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,548:INFO: Task index: 6-1
+criticality: HC
+period: 15.0
+exec_time: 0.09539814585940554
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,548:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,574:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 2.719303125886484
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,574:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,602:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 2.210960492982887
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,602:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,630:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.7619068542210989
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,630:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,655:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.47858538881994955
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,655:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,683:INFO: Task index: 5-1
+criticality: HC
+period: 15.0
+exec_time: 0.5743778512208542
+release_time: 50
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,683:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,711:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 2.1229965464944978
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,711:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,738:INFO: Task index: 5-2
+criticality: HC
+period: 22.5
+exec_time: 2.316060888856627
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,738:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,763:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.7729945819058457
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,763:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,789:INFO: Task index: 6-1
+criticality: HC
+period: 15.0
+exec_time: 0.10492158459174561
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,789:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,814:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 2.917622618300539
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,814:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,839:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 0.477325312216578
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,839:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,867:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.8238012969143396
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,867:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,894:INFO: Task index: 9-0
+criticality: HC
+period: 7.5
+exec_time: 0.7305326729460435
+release_time: 45
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,894:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,922:INFO: Task index: 0-1
+criticality: HC
+period: 15.0
+exec_time: 1.1814912183183668
+release_time: 0.0
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,922:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,949:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 0.581953311081219
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,950:INFO: Schedule is not feasible!
+2024-01-30 19:33:27,978:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 1.9113812572156388
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:27,978:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,005:INFO: Task index: 5-2
+criticality: HC
+period: 22.5
+exec_time: 1.2326513527862515
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,005:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,031:INFO: Task index: 15-0
+criticality: HC
+period: 7.5
+exec_time: 1.7093591021599883
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,032:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,059:INFO: Task index: 5-2
+criticality: HC
+period: 22.5
+exec_time: 0.4273316279804883
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,059:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,088:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 1.487163884642075
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,088:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,118:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.7538984124612529
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,118:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,147:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 0.4397741508486383
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,147:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,175:INFO: Task index: 10-1
+criticality: HC
+period: 15.0
+exec_time: 0.2194295948170344
+release_time: 100
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,175:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,202:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 2.6829680283233817
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,202:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,230:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 1.3413434776566768
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,230:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,258:INFO: Task index: 5-2
+criticality: HC
+period: 22.5
+exec_time: 0.697740138834434
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,258:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,285:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 0.4999736143906902
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,285:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,311:INFO: Task index: 8-1
+criticality: HC
+period: 15.0
+exec_time: 0.13958117342786458
+release_time: 80
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,311:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,339:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 1.6815475161624327
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,339:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,365:INFO: Task index: 5-2
+criticality: HC
+period: 22.5
+exec_time: 0.46754605036864394
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,365:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,392:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 2.361506822104965
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,392:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,420:INFO: Task index: 6-1
+criticality: HC
+period: 15.0
+exec_time: 0.04567855633483053
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,420:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,447:INFO: Task index: 2-1
+criticality: HC
+period: 15.0
+exec_time: 1.1876980556711803
+release_time: 20
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,447:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,473:INFO: Task index: 2-1
+criticality: HC
+period: 15.0
+exec_time: 2.1085483801603675
+release_time: 20
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,473:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,502:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.33861341165210224
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,502:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,531:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 1.9482335975930951
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,531:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,558:INFO: Task index: 12-0
+criticality: HC
+period: 7.5
+exec_time: 0.24410884434739238
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,558:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,587:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.8749085357637837
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,587:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,616:INFO: Task index: 15-0
+criticality: HC
+period: 7.5
+exec_time: 0.5498137396405014
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,616:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,644:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 1.0618119355331757
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,644:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,674:INFO: Task index: 6-2
+criticality: HC
+period: 22.5
+exec_time: 0.8582337447594772
+release_time: 90
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,674:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,703:INFO: Task index: 6-2
+criticality: HC
+period: 22.5
+exec_time: 1.0754236809218694
+release_time: 90
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,703:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,731:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 0.5990318992579008
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,731:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,759:INFO: Task index: 5-1
+criticality: HC
+period: 15.0
+exec_time: 0.6611719926353549
+release_time: 50
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,759:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,784:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 1.8548391494711869
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,785:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,812:INFO: Task index: 7-1
+criticality: HC
+period: 15.0
+exec_time: 1.3009125601285758
+release_time: 70
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,812:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,839:INFO: Task index: 6-1
+criticality: HC
+period: 15.0
+exec_time: 1.2439327865737866
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,839:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,868:INFO: Task index: 9-0
+criticality: HC
+period: 7.5
+exec_time: 0.6421920434624642
+release_time: 45
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,868:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,895:INFO: Task index: 13-0
+criticality: HC
+period: 7.5
+exec_time: 0.8254527324307764
+release_time: 65
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,896:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,922:INFO: Task index: 12-0
+criticality: HC
+period: 7.5
+exec_time: 0.1049885527074998
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,922:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,949:INFO: Task index: 4-2
+criticality: HC
+period: 22.5
+exec_time: 1.797204455750103
+release_time: 60
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,949:INFO: Schedule is not feasible!
+2024-01-30 19:33:28,975:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 0.7018955665614357
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:28,975:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,002:INFO: Task index: 5-1
+criticality: HC
+period: 15.0
+exec_time: 0.8707320938099095
+release_time: 50
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,002:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,030:INFO: Task index: 12-1
+criticality: HC
+period: 15.0
+exec_time: 1.0445846010504867
+release_time: 120
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,030:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,058:INFO: Task index: 11-0
+criticality: HC
+period: 7.5
+exec_time: 0.14824646476518266
+release_time: 55
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,058:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,085:INFO: Task index: 10-1
+criticality: HC
+period: 15.0
+exec_time: 0.5379956193900148
+release_time: 100
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,085:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,116:INFO: Task index: 6-2
+criticality: HC
+period: 22.5
+exec_time: 1.8905597684045448
+release_time: 90
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,116:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,144:INFO: Task index: 3-2
+criticality: HC
+period: 22.5
+exec_time: 2.761673918441154
+release_time: 45
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,144:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,171:INFO: Task index: 2-1
+criticality: HC
+period: 15.0
+exec_time: 1.309009519064479
+release_time: 20
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,171:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,197:INFO: Task index: 10-1
+criticality: HC
+period: 15.0
+exec_time: 0.6678459712127621
+release_time: 100
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,197:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,224:INFO: Task index: 13-0
+criticality: HC
+period: 7.5
+exec_time: 0.6819399249703071
+release_time: 65
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,224:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,250:INFO: Task index: 4-1
+criticality: HC
+period: 15.0
+exec_time: 1.5130696058762778
+release_time: 40
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,250:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,279:INFO: Task index: 15-0
+criticality: HC
+period: 7.5
+exec_time: 0.6960019682403815
+release_time: 75
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,279:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,304:INFO: Task index: 9-0
+criticality: HC
+period: 7.5
+exec_time: 0.5524630133879185
+release_time: 45
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,304:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,330:INFO: Task index: 11-1
+criticality: HC
+period: 15.0
+exec_time: 0.035546833137410916
+release_time: 110
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,330:INFO: Schedule is not feasible!
+2024-01-30 19:33:29,356:INFO: Task index: 2-2
+criticality: HC
+period: 22.5
+exec_time: 0.5573797806040849
+release_time: 30
+finish_time: None has missed its deadline
+2024-01-30 19:33:29,356:INFO: Schedule is not feasible!
