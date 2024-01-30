@@ -1,0 +1,7 @@
+2024-01-30 09:47:29,859:INFO: Task index: 5
+criticality: HC
+period: 5
+exec_time: 1.2439155852759838
+release_time: 25
+finish_time: None has missed its deadline
+2024-01-30 09:47:29,859:INFO: Schedule is not feasible!
