@@ -19,8 +19,6 @@ class ErEDF:
         for task in self._tasks:
             heapq.heappush(task_queue, task)
 
-        current_task = None
-
         while task_queue:
             if all([_.should_schedule_later for _ in task_queue]):
                 # impossible
@@ -28,32 +26,6 @@ class ErEDF:
                 break
 
             task = heapq.heappop(task_queue)
-
-            if task != current_task and current_task is not None:
-                new_task_critical_sections = [
-                    cs for cs in task.critical_sections
-                ]
-                old_task_critical_sections = [
-                    cs for cs in current_task.critical_sections
-                ]
-
-                new_task_original_resources = set([
-                    cs.task_resource.original_resource for cs in task.critical_sections
-                ])
-
-                old_task_original_resources = set([
-                    cs.task_resource.original_resource for cs in current_task.critical_sections
-                ])
-
-
-                if not all(
-                    cs.task_resource.original_resource.free_units_count >= cs.task_resource.units
-                    for cs in new_task_critical_sections
-                ) and new_task_original_resources.issubset(old_task_original_resources):
-                    for cs in old_task_critical_sections:
-                        cs.task_resource.release_resources()
-
-            current_task = task
 
             current_time, task = self._get_current_running_task(current_time, task)
             task.should_schedule_later = False
@@ -103,6 +75,14 @@ class ErEDF:
             task.executed_time += duration
             current_time += duration
 
+            ended_critical_sections = [
+                cs for cs in task.critical_sections if
+                cs.relative_end_time <= task.executed_time
+            ]
+            # Release resources
+            for cs in ended_critical_sections:
+                cs.task_resource.release_resources()
+
             # Check if the task has completed its execution
             if task.executed_time >= task.exec_time:
                 task.finish(current_time)
@@ -110,7 +90,6 @@ class ErEDF:
                 for cs in task.critical_sections:
                     cs.task_resource.release_resources()
             else:
-                current_task = task
                 # we add it back to queue to continue execution
                 heapq.heappush(task_queue, task)
 
