@@ -11,6 +11,10 @@ class Runner:
         all_resources = []
         data = TaskGenerator().generate_task_and_resource_set()
         tasks = data['tasks']
+        resources = data['resources']
+
+        ErEDF(tasks, resources).schedule()
+
         for task in tasks:
             all_tasks.append({
                 "name": task.name,
@@ -24,7 +28,6 @@ class Runner:
                 "should_schedule_later": task.should_schedule_later
             })
 
-        resources = data['resources']
         for resource in resources:
             all_resources.append({
                 "name": resource.name,
@@ -37,7 +40,7 @@ class Runner:
 
         with open('all_resources.json', 'w') as fout:
             json.dump(all_resources, fout, indent=4)
-        ErEDF(tasks, resources).schedule()
+        print(tasks)
 
 
 Runner.run()

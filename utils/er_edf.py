@@ -67,7 +67,7 @@ class ErEDF:
                 continue
 
             # Mark the task as running and update the task's execution time
-            duration = min([1, task.exec_time])
+            duration = min([1, task.exec_time - task.executed_time])
             task.executed_time += duration
             current_time += duration
 
