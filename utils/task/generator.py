@@ -12,13 +12,13 @@ class TaskGenerator:
     def __init__(
             self,
             system_end_time=100,
-            total_resource_count=5,
+            total_resource_count=15,
             resource_min_unit_count=1,
             resource_max_unit_count=5,
             total_task_count=100,
-            critical_sections_min_count=0,
+            critical_sections_min_count=6,
             critical_sections_max_count=10,
-            total_utilization=0.7,
+            total_utilization=0.75,
     ):
         self._system_end_time = system_end_time
         self._total_resource_count = total_resource_count
@@ -34,6 +34,7 @@ class TaskGenerator:
     @staticmethod
     def _generate_hc_task(
             index: int,
+            name: str,
             period: int,
             utilization: float,
             critical_sections: list['CriticalSection'],
@@ -42,7 +43,7 @@ class TaskGenerator:
         short_execution_time = random.uniform(0.01, long_execution_time)
 
         return HC(
-            name=index,
+            name=name,
             release_time=index * period,
             critical_sections=critical_sections,
             exec_time=short_execution_time,
@@ -53,6 +54,7 @@ class TaskGenerator:
     @staticmethod
     def _generate_lc_task(
             index: int,
+            name: str,
             period: int,
             utilization: float,
             critical_sections: list['CriticalSection'],
@@ -60,7 +62,7 @@ class TaskGenerator:
         execution_time = utilization * period
 
         return LC(
-            name=index,
+            name=name,
             release_time=index * period,
             critical_sections=critical_sections,
             period=period,
@@ -125,7 +127,7 @@ class TaskGenerator:
         all_periods = hc_periods + lc_periods
         utilizations = uunifast(len(all_periods), self._total_utilization)
 
-        task_period_count = int(self._total_task_count / (len(CRITICALITY_LEVELS) * len(all_periods)))
+        task_period_count = int(self._total_task_count / (len(all_periods)))
 
         hc_critical_sections = [
             self._generate_critical_sections_for_task(
@@ -146,6 +148,7 @@ class TaskGenerator:
                 tasks.append(
                     self._generate_hc_task(
                         index=index,
+                        name=f'{index}-{i}',
                         utilization=utilizations[i],
                         period=period,
                         critical_sections=deepcopy(hc_critical_sections[i]),
@@ -155,11 +158,14 @@ class TaskGenerator:
                 tasks.append(
                     self._generate_lc_task(
                         index=index,
+                        name=f'{index}-{i}',
                         utilization=utilizations[len(hc_periods) + i],
                         period=period,
                         critical_sections=deepcopy(lc_critical_sections[i]),
                     )
                 )
+
+        print(len(tasks))
 
         return dict(
             tasks=tasks,

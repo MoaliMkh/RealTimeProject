@@ -1,5 +1,5 @@
 from utils.er_edf import ErEDF
-from utils.task import TaskGenerator
+from utils.task import TaskGenerator, BaseTask
 import json
 
 
@@ -10,7 +10,7 @@ class Runner:
         all_tasks = []
         all_resources = []
         data = TaskGenerator().generate_task_and_resource_set()
-        tasks = data['tasks']
+        tasks = data['tasks'] # type:  list['BaseTask']
         resources = data['resources']
 
         ErEDF(tasks, resources).schedule()
@@ -41,6 +41,17 @@ class Runner:
         with open('all_resources.json', 'w') as fout:
             json.dump(all_resources, fout, indent=4)
         print(tasks)
+        all_LC_tasks = 0
+        counter = 0
+        for task in tasks:
+            # if task.criticality == "LC":
+            #     all_LC_tasks += 1
+            if task.finish_time != None:
+                counter += 1
+
+        # print(all_LC_tasks)
+        print(len(tasks))
+        print(counter)
 
 
 Runner.run()
