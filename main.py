@@ -6,15 +6,8 @@ import json
 class Runner:
 
     @staticmethod
-    def run():
+    def serializer_tasks(tasks, f_name):
         all_tasks = []
-        all_resources = []
-        data = TaskGenerator().generate_task_and_resource_set()
-        tasks = data['tasks'] # type:  list['BaseTask']
-        resources = data['resources']
-
-        ErEDF(tasks, resources).schedule()
-
         for task in tasks:
             all_tasks.append({
                 "name": task.name,
@@ -42,25 +35,40 @@ class Runner:
                 ]
             })
 
+        with open(f'{f_name}.json', 'w') as f_out:
+            json.dump(all_tasks, f_out, indent=4)
+
+    @classmethod
+    def run(cls):
+
+        data = TaskGenerator().generate_task_and_resource_set()
+        tasks = data['tasks']  # type:  list['BaseTask']
+        resources = data['resources']
+
+        cls.serializer_tasks(tasks, 'all_tasks_before_run')
+
+        all_serialized_resources = []
         for resource in resources:
-            all_resources.append({
+            all_serialized_resources.append({
                 "name": resource.name,
                 "total_units": resource.total_units,
                 "allocated_units": resource.allocated_units
             })
 
-        with open('all_tasks.json', 'w') as fout:
-            json.dump(all_tasks, fout, indent=4)
+        with open('all_resources.json', 'w') as f_out:
+            json.dump(all_serialized_resources, f_out, indent=4)
 
-        with open('all_resources.json', 'w') as fout:
-            json.dump(all_resources, fout, indent=4)
+        ErEDF(tasks, resources).schedule()
+
+        cls.serializer_tasks(tasks, 'all_tasks_after_run')
+
         print(tasks)
         all_LC_tasks = 0
         counter = 0
         for task in tasks:
             # if task.criticality == "LC":
             #     all_LC_tasks += 1
-            if task.finish_time != None:
+            if task.finish_time is not None:
                 counter += 1
 
         # print(all_LC_tasks)
