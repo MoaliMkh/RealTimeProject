@@ -2,6 +2,7 @@ import os
 import json
 from utils.er_edf import ErEDF
 from utils.task import TaskGenerator
+from utils.task.task import BaseTask
 
 DATA_DIR = 'data'
 
