@@ -34,7 +34,7 @@ class Reporter:
 
         for simulation in simulations:
             counter = 0
-            for task in simulation:
+            for task in simulation:                    
                 if task['finish_time'] is not None:    
                     counter += 1
             results.append((counter, len(simulation)))
