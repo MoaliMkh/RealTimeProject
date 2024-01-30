@@ -38,13 +38,15 @@ class ErEDF:
                     if isinstance(task, HC) and task.finish_time is None:
                         task.exec_time = task.long_exec_time
                         task.period = task.period * self.x
+                        if task.executed_time != 0:
+                            task.release_time = task.release_time * self.x
 
             # Check if the task has reached its deadline
             if current_time >= task.deadline:
                 if isinstance(task, HC):
                     logger.info(f'Task {task} has missed its deadline')
                     logger.info('Schedule is not feasible!')
-                    break
+                    return False
                 else:
                     continue
 
@@ -90,6 +92,9 @@ class ErEDF:
                 # we add it back to queue to continue execution
                 heapq.heappush(task_queue, task)
 
+        logger.info('Schedule is feasible')
+        return True
+
     @staticmethod
     def _get_current_running_task(current_time, r_task: BaseTask):
         if r_task.release_time > current_time:
@@ -97,4 +102,4 @@ class ErEDF:
         return current_time, r_task
 
     def schedule(self):
-        self._schedule()
+        return self._schedule()

@@ -6,7 +6,8 @@ from utils.task import TaskGenerator
 
 DATA_DIR = 'data'
 
-os.mkdir(DATA_DIR)
+if not os.path.exists(DATA_DIR):
+    os.mkdir(DATA_DIR)
 
 
 class Runner:
