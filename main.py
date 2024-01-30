@@ -25,7 +25,21 @@ class Runner:
                 "is_scheduled": task.is_scheduled,
                 "period": task.period,
                 "finish_time": task.finish_time,
-                "should_schedule_later": task.should_schedule_later
+                "should_schedule_later": task.should_schedule_later,
+                'critical_sections': [
+                    {
+                        "relative_start_time": cs.relative_start_time,
+                        "relative_end_time": cs.relative_end_time,
+                        "task_resource": {
+                            "original_resource": {
+                                "name": cs.task_resource.original_resource.name,
+                                "total_units": cs.task_resource.original_resource.total_units,
+                                "free_units_count": cs.task_resource.original_resource.free_units_count
+                            },
+                            "units": cs.task_resource.units
+                        }
+                    } for cs in task.critical_sections
+                ]
             })
 
         for resource in resources:
