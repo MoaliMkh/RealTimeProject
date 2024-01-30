@@ -11,6 +11,7 @@ class ErEDF:
         self._is_overrun = False
         # we can change this
         self._overrun_time = 10
+        self.x = 1.5
 
     def _schedule(self):
         current_time = 0
@@ -29,13 +30,14 @@ class ErEDF:
             current_time, task = self._get_current_running_task(current_time, task)
             task.should_schedule_later = False
 
-            if current_time >= self._overrun_time:
+            if current_time >= self._overrun_time and not self._is_overrun:
                 self._is_overrun = True
-
-            # Check if the task has reached its short execution time and if it's a high criticality task,
-            # switch to long execution time
-            if self._is_overrun and isinstance(task, HC) and task.executed_time >= task.short_exec_time:
-                task.exec_time = task.long_exec_time
+                # Check if the task has reached its short execution time and if it's a high criticality task,
+                # switch to long execution time
+                for task in self._tasks:
+                    if isinstance(task, HC) and task.finish_time is None:
+                        task.exec_time = task.long_exec_time
+                        task.period = task.period * self.x
 
             # Check if the task has reached its deadline
             if current_time >= task.deadline:
