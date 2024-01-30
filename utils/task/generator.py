@@ -17,7 +17,7 @@ class TaskGenerator:
             total_task_count=100,
             critical_sections_min_count=6,
             critical_sections_max_count=10,
-            total_utilization=0.5,
+            total_utilization=0.7,
     ):
         self._total_resource_count = total_resource_count
         self.resource_min_unit_count = resource_min_unit_count
